@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class hellocontroller {
 
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the home page";
+    }
+
     @GetMapping("/hello")
     public String hello() {
         return "Hello World";
     }
 
-    @GetMapping("/")
-    public String home() {
-        return "Welcome to the home page";
-    }
 
     @PostMapping("/hello")
     public String helloPost( @RequestBody String body) {
